@@ -1,0 +1,21 @@
+<div class="container">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" formControlName="title" required>
+            <div
+                *ngIf="postForm.get('title')?.invalid && (postForm.get('title')?.dirty || postForm.get('title')?.touched)">
+                <div *ngIf="postForm.get('title')?.errors?.['required']">Title is required.</div>
+            </div>
+        </div>
+        <div>
+            <label for="body">Body</label>
+            <textarea id="body" formControlName="body" required></textarea>
+            <div
+                *ngIf="postForm.get('body')?.invalid && (postForm.get('body')?.dirty || postForm.get('body')?.touched)">
+                <div *ngIf="postForm.get('body')?.errors?.['required']">Body is required.</div>
+            </div>
+        </div>
+        <button type="submit">Update Post</button>
+    </form>
+</div>
