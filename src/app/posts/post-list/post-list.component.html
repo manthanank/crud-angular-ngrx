@@ -1,0 +1,13 @@
+<button (click)="addPost()">Add Post</button>
+
+<div *ngIf="posts$ | async as posts">
+    <div *ngFor="let post of posts">
+        <!-- Display post data here -->
+        <h2 (click)="viewPost(post.id)">{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+
+        <!-- Add delete and edit buttons -->
+        <button (click)="deletePost(post.id)">Delete</button>
+        <button (click)="editPost(post.id)" style="margin-left: 10px;">Edit</button>
+    </div>
+</div>
