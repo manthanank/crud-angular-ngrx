@@ -1,1 +1,1 @@
-# crud-angular-ngrx
+# CRUD Angular NgRx
